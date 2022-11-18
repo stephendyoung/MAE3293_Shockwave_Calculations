@@ -1,11 +1,24 @@
 from Isentropic_Calculations import Appendices
 # from MAE3293_Shockwave_Calculations.Recreating_Appendices.Isentropic_Calculations import RecreatingAppendices
+user_selection = input("What appendix are you looking for? \n A) Isentropic Relationship \n B) Normal Schockwave "
+                       "Relationship \n C) Prandtl-Meyer Relationship\n Enter A, B, or C: ")
 
 mach_number = Appendices(mymach=float(input("What is your Mach Number ")))
-mach_number.isentropic()  # this calls the isentropic function then the line below calls for each part of the method
-print(f'T0/T = {mach_number.T_0_over_T} P0/P = {mach_number.p_0_over_p} Rho0/Rho = {mach_number.rho_0_over_rho}')
 
+""" line above calls the isentropic function then the line below calls for each part of the method. 
+error within was dealing with passing the mach number twice but once you assign it, the entire class knows it already. 
+Therefore, don't pass it again in class file- comment in there for it. 
+"""
+
+if user_selection == "A":
+    mach_number.isentropic()
+    print(f'T0/T = {mach_number.T_0_over_T:.4f} P0/P = {mach_number.p_0_over_p:4f} Rho0/Rho = {mach_number.rho_0_over_rho:4f}')
+elif user_selection == "B":
+    mach_number.normal_shcokwave()
+    print(f'P_2/P_1 = {mach_number.p_2_static_over_p_1_static:.3f}')
 
 """ 
-add normal shock wave, prandtl meyer, and plot table for all three (add possible iteration for previous values. 
+add normal shock wave, prandtl meyer, and plot table for all three (add possible iteration for previous values.) 
+also add what is in notes app Dr. Kara talked about. Can also add try and except to take keyboard interruption/cancel 
+key
 """
