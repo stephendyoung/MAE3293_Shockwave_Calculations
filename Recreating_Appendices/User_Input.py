@@ -3,7 +3,7 @@ from Isentropic_Calculations import Appendices
 user_selection = input("What appendix are you looking for? \n A) Isentropic Relationship \n B) Normal Schockwave "
                        "Relationship \n C) Prandtl-Meyer Relationship\n Enter A, B, or C: ")
 
-mach_number = Appendices(mymach=float(input("What is your Mach Number ")))
+mach_number = Appendices(mymach=float(input("\nWhat is your Mach Number ")))
 
 """ line above calls the isentropic function then the line below calls for each part of the method. 
 error within was dealing with passing the mach number twice but once you assign it, the entire class knows it already. 
@@ -15,7 +15,8 @@ if user_selection == "A":
     print(f'T0/T = {mach_number.T_0_over_T:.4f} P0/P = {mach_number.p_0_over_p:4f} Rho0/Rho = {mach_number.rho_0_over_rho:4f}')
 elif user_selection == "B":
     mach_number.normal_shcokwave()
-    print(f'P_2/P_1 = {mach_number.p_2_static_over_p_1_static:.3f}')
+    print(f'P_2/P_1 = {mach_number.p_2_static_over_p_1_static:.3f} Rho_2/Rho_1 {mach_number.rho_2_static_over_rho_1_static:.3f}'
+          f' T_2/T_1 = {mach_number.T_2_over_T_1:.3f} Downstream Mach Number {mach_number.mach_downstream:.3f}')
 
 """ 
 add normal shock wave, prandtl meyer, and plot table for all three (add possible iteration for previous values.) 

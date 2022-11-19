@@ -1,3 +1,4 @@
+import math
 class Appendices:
     def __init__(self, mymach): # for solving, need to pass values from user to method
 
@@ -8,6 +9,10 @@ class Appendices:
         self.A_over_A_start = None
         # start of normal shock wave values for solving users problems :)
         self.p_2_static_over_p_1_static = None
+        self.rho_2_static_over_rho_1_static = None
+        self.T_2_over_T_1 = None
+        self.ptotal_2_over_ptotal_1 = None
+        self.mach_downstream = None
         #self.USP = upstream_static_pressure
 
     def isentropic(self): # don't have to pass mymach argument again to isentropic because the entire class already knows it
@@ -21,5 +26,9 @@ class Appendices:
         #upstream_static_pressure = self.USP
         mymach = self.mach
         self.p_2_static_over_p_1_static = 1 + (((2 * 1.4) / (1.4 + 1)) * ((mymach ** 2) - 1))
-
+        self.rho_2_static_over_rho_1_static = ((1.4 + 1 ) * mymach ** 2) / (2 + ((1.4 - 1 ) * mymach ** 2))
+        self.T_2_over_T_1 = (self.p_2_static_over_p_1_static * (self.rho_2_static_over_rho_1_static ** -1))
+        self.mach_downstream = math.sqrt((1 + ((1.4 -1)/2) * mymach ** 2) / ((1.4 * mymach ** 2)- ((1.4 - 1)/2)))
+        self.ptotal_2_over_ptotal_1 = None # need to get mach 2 before finding
+        # pressure total relationship and raleigh pitot tube formula left 
 
