@@ -29,6 +29,7 @@ class Appendices:
         self.rho_2_static_over_rho_1_static = ((1.4 + 1 ) * mymach ** 2) / (2 + ((1.4 - 1 ) * mymach ** 2))
         self.T_2_over_T_1 = (self.p_2_static_over_p_1_static * (self.rho_2_static_over_rho_1_static ** -1))
         self.mach_downstream = math.sqrt((1 + ((1.4 -1)/2) * mymach ** 2) / ((1.4 * mymach ** 2)- ((1.4 - 1)/2)))
-        self.ptotal_2_over_ptotal_1 = None # need to get mach 2 before finding
-        # pressure total relationship and raleigh pitot tube formula left 
+        self.ptotal_2_over_ptotal_1 = (((1.4 + 1) * (mymach ** 2)) / (((1.4 - 1) * (mymach ** 2)) + 2)) ** (1.4 / (1.4 - 1)) * ((1.4 + 1) / ((2 * 1.4 * (mymach ** 2)) - (1.4 - 1)))
+#(((1.4 + 1) * (mymach ** 2)) / (((1.4 - 1) * (mymach ** 2)) + 2)) ** (1.4 / (1.4 - 1))
+        # pressure total relationship and raleigh pitot tube formula left
 
