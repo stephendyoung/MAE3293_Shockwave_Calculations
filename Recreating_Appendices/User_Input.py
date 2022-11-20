@@ -20,9 +20,12 @@ elif user_selection == "B":
           f' T_2/T_1 = {mach_number.T_2_over_T_1:.3f} Ptotal_2/Ptotal_1 {mach_number.ptotal_2_over_ptotal_1:.3f}'
           f' Ptotal_2/P_1 = {mach_number.ptotal_2_over_p_1_static:.3f} Downstream Mach Number'
           f' {mach_number.mach_downstream:.4f}')
+elif user_selection == "C":
+    mach_number.expansion_fans()
+    print(f'mu = {mach_number.mu:.2f}degrees nu = {mach_number.nu:.3f}')
 
 """ 
-add normal shock wave, prandtl meyer, and plot table for all three (add possible iteration for previous values.) 
+add normal shock wave (done), prandtl meyer, and plot table for all three (add possible iteration for previous values.) 
 also add what is in notes app Dr. Kara talked about. Can also add try and except to take keyboard interruption/cancel 
 key
 """
