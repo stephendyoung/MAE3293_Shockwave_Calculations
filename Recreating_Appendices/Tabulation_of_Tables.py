@@ -1,6 +1,5 @@
 from Isentropic_Calculations import Appendices
 
-
 # mach_number = Appendices(mymach=0.02)
 #
 # while mach_number < 1:
@@ -13,5 +12,6 @@ mymach = 0.02
 while mymach < 1.02:
     mach_number = Appendices(mymach)
     mach_number.isentropic()
-    print(f"T0/T = {mach_number.T_0_over_T:.3f}")
+    print(f'T0/T = {mach_number.T_0_over_T:.3f} P0/P = {mach_number.p_0_over_p:3f} Rho0/Rho ='
+          f' {mach_number.rho_0_over_rho:4f}')
     mymach += 0.02
