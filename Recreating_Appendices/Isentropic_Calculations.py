@@ -17,6 +17,7 @@ class Appendices:
         self.ptotal_2_over_ptotal_1 = None
         self.mach_downstream = None
         self.ptotal_2_over_p_1_static = None
+        self.upstream_static_pressure = None
 
         # expansion fan equations
 
@@ -41,7 +42,7 @@ class Appendices:
         self.T_2_over_T_1 = (self.p_2_static_over_p_1_static * (self.rho_2_static_over_rho_1_static ** -1))
         self.mach_downstream = math.sqrt((1 + ((1.4 - 1) / 2) * mymach ** 2) / ((1.4 * mymach ** 2) - ((1.4 - 1) / 2)))
         self.ptotal_2_over_ptotal_1 = ((((1.4 + 1) * (mymach ** 2)) / (((1.4 - 1) * (mymach ** 2)) + 2)) ** (
-                    1.4 / (1.4 - 1))) * ((1.4 + 1) / ((2 * 1.4 * (mymach ** 2)) - (1.4 - 1))) ** (1 / (1.4 - 1))
+                1.4 / (1.4 - 1))) * ((1.4 + 1) / ((2 * 1.4 * (mymach ** 2)) - (1.4 - 1))) ** (1 / (1.4 - 1))
         self.ptotal_2_over_p_1_static = self.ptotal_2_over_ptotal_1 * self.p_0_over_p
 
     def expansion_fans(self):
@@ -49,3 +50,9 @@ class Appendices:
         self.mu = math.degrees(math.asin(1 / mymach))
         self.nu = math.degrees(math.sqrt((1.4 + 1) / (1.4 - 1)) * math.atan(
             math.sqrt(((1.4 - 1) / (1.4 + 1)) * ((mymach ** 2) - 1))) - math.atan(math.sqrt(mymach ** 2 - 1)))
+
+    """ def normal_shock_calculations(self):
+        mymach = self.mach
+        upstream_static_pressure = self.upstream_static_pressure
+        downstream_static_pressure = upstream_static_pressure * (1/ self.)
+        """
