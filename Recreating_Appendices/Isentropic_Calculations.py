@@ -34,7 +34,7 @@ class Appendices:
         self.p_0_over_p = self.T_0_over_T ** (1.4 / 0.4)
         self.rho_0_over_rho = self.T_0_over_T ** (1 / (1.4 - 1))
         # self.A_over_A_start = 1 / mymach * ((1 + (1.4 - 1) / 2 * mymach ** 2) / ((1.4 + 1) / 2)) ** (
-        # (mymach + 1) / (2 * (mymach - 1))) figure out later
+        # (mymach + 1) / (2 * (mymach - 1))) ignore
 
     def normal_shockwave(self):
         Appendices.isentropic(self)
