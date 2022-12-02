@@ -2,7 +2,7 @@ import math
 
 
 class Appendices:
-    def __init__(self, mymach, upstream_static_pressure):  # for solving, need to pass values from user to method
+    def __init__(self, mymach):  # for solving, need to pass values from user to method
         self.mach = mymach
         self.p_0_over_p = None
         self.rho_0_over_rho = None
@@ -19,7 +19,7 @@ class Appendices:
         self.ptotal_2_over_p_1_static = None
 
         # start of normal shock waves calculator
-        self.given_static_pressure = upstream_static_pressure
+        # self.given_static_pressure = upstream_static_pressure
         self.downstream_static_pressure = None
 
         # expansion fan equations
@@ -53,6 +53,7 @@ class Appendices:
         self.nu = math.degrees(math.sqrt((1.4 + 1) / (1.4 - 1)) * math.atan(
             math.sqrt(((1.4 - 1) / (1.4 + 1)) * ((mymach ** 2) - 1))) - math.atan(math.sqrt(mymach ** 2 - 1)))
 
-    def normal_shock_calculations(self):
-        upstream_static_pressure = self.given_static_pressure
+    def normal_shock_calculations(self, upstream_static_pressure):
+        # upstream_static_pressure = self.given_static_pressure
+
         self.downstream_static_pressure = upstream_static_pressure * self.p_2_static_over_p_1_static

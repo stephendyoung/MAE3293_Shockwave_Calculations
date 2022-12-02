@@ -4,8 +4,7 @@ from Isentropic_Calculations import Appendices
 user_selection = input("What appendix are you looking for? \n A) Isentropic Relationship \n B) Normal Schockwave "
                        "Relationship \n C) Prandtl-Meyer Relationship\n Enter A, B, or C: ")
 
-given_values = Appendices(mymach=float(input("\nWhat is your Mach Number ")), upstream_static_pressure=float(input(
-    "\nWhat is the upstream static pressure? ")))
+given_values = Appendices(mymach=float(input("\nWhat is your Mach Number ")))
 
 """ line above calls the isentropic function then the line below calls for each part of the method. 
 error within was dealing with passing the mach number twice but once you assign it, the entire class knows it already. 
@@ -26,7 +25,8 @@ elif user_selection == "B":
         f' Ptotal_2/P_1 = {given_values.ptotal_2_over_p_1_static:.3f} Downstream Mach Number'
         f' {given_values.mach_downstream:.4f}')
 
-    given_values.normal_shock_calculations()
+    given_values.normal_shock_calculations(upstream_static_pressure=float(input(
+    "\nWhat is the upstream static pressure? ")))
     print(f'\nDownstream Static Pressure (P2) = {given_values.downstream_static_pressure:.3f}')
 
 elif user_selection == "C":
