@@ -5,7 +5,7 @@ user_selection = input("What appendix are you looking for? \n A) Isentropic Rela
                        "Relationship \n C) Prandtl-Meyer Relationship\n Enter A, B, or C: ")
 
 given_values = Appendices(mymach=float(input("\nWhat is your Mach Number ")), upstream_static_pressure=float(input(
-    "\nWhat is the upstream static pressure? ")))  # try to add if statement to this here so that it doesn't always ask
+    "\nWhat is the upstream static pressure? ")))
 
 """ line above calls the isentropic function then the line below calls for each part of the method. 
 error within was dealing with passing the mach number twice but once you assign it, the entire class knows it already. 
