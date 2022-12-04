@@ -54,6 +54,4 @@ class Appendices:
             math.sqrt(((1.4 - 1) / (1.4 + 1)) * ((mymach ** 2) - 1))) - math.atan(math.sqrt(mymach ** 2 - 1)))
 
     def normal_shock_calculations(self, upstream_static_pressure):
-        # upstream_static_pressure = self.given_static_pressure
-
         self.downstream_static_pressure = upstream_static_pressure * self.p_2_static_over_p_1_static

@@ -26,15 +26,15 @@ elif user_selection == "B":
         f' {given_values.mach_downstream:.4f}')
 
     given_values.normal_shock_calculations(upstream_static_pressure=float(input(
-    "\nWhat is the upstream static pressure? ")))
+        "\nWhat is the upstream static pressure? ")))
+    # have to do this so that passes the upstream static to the NS calc
+
     print(f'\nDownstream Static Pressure (P2) = {given_values.downstream_static_pressure:.3f}')
 
 elif user_selection == "C":
     given_values.expansion_fans()
     print(f'mu = {given_values.mu:.2f}degrees nu = {given_values.nu:.3f}')
 
-""" 
-add normal shock wave (done), prandtl meyer (done), and plot table for all three (add possible iteration for previous values.) 
-also add what is in notes app Dr. Kara talked about. Can also add try and except to take keyboard interruption/cancel 
-key
-"""
+"""add normal shock wave (done), prandtl meyer (done), and plot table for all three (add possible iteration for 
+previous values.) also add what is in notes app Dr. Kara talked about. Can also add try and except to take keyboard 
+interruption/cancel key """
