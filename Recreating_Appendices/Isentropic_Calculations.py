@@ -21,6 +21,8 @@ class Appendices:
         # start of normal shock waves calculator
         # self.given_static_pressure = upstream_static_pressure
         self.downstream_static_pressure = None
+        self.mach_2 = None
+        self.downstream_static_temperature = None
 
         # expansion fan equations
         self.mu = None
@@ -53,5 +55,7 @@ class Appendices:
         self.nu = math.degrees(math.sqrt((1.4 + 1) / (1.4 - 1)) * math.atan(
             math.sqrt(((1.4 - 1) / (1.4 + 1)) * ((mymach ** 2) - 1))) - math.atan(math.sqrt(mymach ** 2 - 1)))
 
-    def normal_shock_calculations(self, upstream_static_pressure):
+    def normal_shock_calculations(self, upstream_static_pressure, upstream_static_temperature):
         self.downstream_static_pressure = upstream_static_pressure * self.p_2_static_over_p_1_static
+        self.mach_2 = self.mach_downstream
+        self.downstream_static_temperature = upstream_static_temperature * self.T_2_over_T_1
